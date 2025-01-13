@@ -33,24 +33,32 @@
                                 <div class="border p-4 rounded">
                                     <h1 class="text-center">Login</h1>
                                     <div class="form-body">
-                                        <form class="row g-3">
+                                        <form class="row g-3" action="{{ route('post_login') }}" method="POST">
+                                            @csrf
+                                            @if (Session::has('failed'))
+                                                <div class="alert alert-danger alert-dismissable">
+                                                    <button type="button" class="close" data-dismiss="alert"
+                                                        aria-hidden="true">&times;</button>
+                                                    {{ Session::get('failed') }}
+                                                </div>
+                                            @endif
+
                                             <div class="col-12">
-                                                <label for="inputEmailAddress" class="form-label">Email Address</label>
-                                                <input type="email" class="form-control" id="inputEmailAddress"
-                                                    placeholder="Email Address">
+                                                <label for="inputEmailAddress" class="form-label">Email</label>
+                                                <input type="email" name="email" class="form-control"
+                                                    id="inputEmailAddress" placeholder="example@user.com">
                                             </div>
                                             <div class="col-12">
-                                                <label for="inputChoosePassword" class="form-label">Enter
-                                                    Password</label>
+                                                <label for="inputChoosePassword" class="form-label">Password</label>
                                                 <div class="input-group" id="show_hide_password">
-                                                    <input type="password" class="form-control border-end-0"
-                                                        id="inputChoosePassword" placeholder="Enter Password"> <a
-                                                        href="javascript:;" class="input-group-text bg-transparent"><i
+                                                    <input type="password" name="password"
+                                                        class="form-control border-end-0" id="inputChoosePassword"
+                                                        placeholder="Enter Password"> <a href="javascript:;"
+                                                        class="input-group-text bg-transparent"><i
                                                             class='bx bx-hide'></i></a>
                                                 </div>
                                             </div>
-                                            <div class="col-12 text-end"> <a
-                                                    href="{{ url('authentication-forgot-password') }}">Forgot Password
+                                            <div class="col-12 text-end"> <a href="#">Forgot Password
                                                     ?</a>
                                             </div>
                                             <div class="col-12">
