@@ -21,7 +21,7 @@
         </li>
         {{-- Data Pengaduan --}}
         <li>
-            <a href="/pengaduan">
+            <a href="{{ route('pengaduan.index') }}">
                 <div class="parent-icon"><i data-feather="monitor"></i>
                 </div>
                 <div class="menu-title">Data Pengaduan</div>
@@ -29,7 +29,7 @@
         </li>
         {{-- Data User --}}
         <li>
-            <a href="/user">
+            <a href="{{ route('driver.index') }}">
                 <div class="parent-icon"><i data-feather="user"></i>
                 </div>
                 <div class="menu-title">Data User</div>
