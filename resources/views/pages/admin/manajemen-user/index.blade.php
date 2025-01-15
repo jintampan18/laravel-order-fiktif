@@ -31,7 +31,7 @@
                                     <th>No</th>
                                     <th>Email</th>
                                     <th>Username</th>
-                                    <th>status</th>
+                                    <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
