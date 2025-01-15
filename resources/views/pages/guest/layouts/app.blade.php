@@ -9,8 +9,8 @@
     <meta name="keywords" content="">
 
     <!-- Favicons -->
-    <link href="assetsGuest/img/favicon.png" rel="icon">
-    <link href="assetsGuest/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="{{ asset('assetsGuest/img/favicon.png') }}" rel="icon">
+    <link href="{{ asset('assetsGuest/img/apple-touch-icon.png" rel="apple-touch-icon') }}">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -20,15 +20,15 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="assetsGuest/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assetsGuest/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assetsGuest/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assetsGuest/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-    <link href="assetsGuest/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assetsGuest/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="{{ asset('assetsGuest/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assetsGuest/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('assetsGuest/vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ asset('assetsGuest/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assetsGuest/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assetsGuest/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
     <!-- Main CSS File -->
-    <link href="assetsGuest/css/main.css" rel="stylesheet">
+    <link href="{{ asset('assetsGuest/css/main.css') }}" rel="stylesheet">
 
     <style>
         .card {
@@ -47,6 +47,22 @@
             height: 90px;
             object-fit: cover;
         }
+
+        .login-button {
+            padding: 8px 20px;
+            /* background-color: #007bff; */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 10px 20px;
+        }
+
+        /*
+        .login-button:hover {
+            background-color: #0056b3;
+        } */
     </style>
 
     <!-- =======================================================
@@ -73,15 +89,15 @@
     <div id="preloader"></div>
 
     <!-- Vendor JS Files -->
-    <script src="assetsGuest/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assetsGuest/vendor/php-email-form/validate.js"></script>
-    <script src="assetsGuest/vendor/aos/aos.js"></script>
-    <script src="assetsGuest/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assetsGuest/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assetsGuest/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="{{ asset('assetsGuest/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assetsGuest/vendor/php-email-form/validate.js') }}"></script>
+    <script src="{{ asset('assetsGuest/vendor/aos/aos.js') }}"></script>
+    <script src="{{ asset('assetsGuest/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+    <script src="{{ asset('assetsGuest/vendor/glightbox/js/glightbox.min.js') }}"></script>
+    <script src="{{ asset('assetsGuest/vendor/swiper/swiper-bundle.min.js') }}"></script>
 
     <!-- Main JS File -->
-    <script src="assetsGuest/js/main.js"></script>
+    <script src="{{ asset('assetsGuest/js/main.js') }}"></script>
 
 </body>
 

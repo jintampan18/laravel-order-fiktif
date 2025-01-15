@@ -32,7 +32,11 @@ class AuthController extends Controller
             return redirect()->back()->withErrors(['password' => 'Password salah'])->withInput();
         }
 
-        return redirect()->route('dashboard');
+        if ($user->role === 'admin') {
+            return redirect()->route('dashboard');
+        } else {
+            return redirect()->route('landing');
+        }
     }
 
     public function showRegisterForm()
@@ -79,6 +83,6 @@ class AuthController extends Controller
     {
         Auth::logout();
 
-        return redirect()->route('login')->with('success', 'Anda telah logout.');
+        return redirect()->route('landing')->with('success', 'Anda telah logout.');
     }
 }

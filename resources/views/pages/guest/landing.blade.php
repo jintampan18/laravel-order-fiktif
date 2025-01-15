@@ -17,7 +17,7 @@
 
                         <form action="{{ route('guest.list_aduan') }}" class="form-search d-flex align-items-stretch mb-3"
                             data-aos="fade-up" data-aos-delay="200">
-                            <input type="text" class="form-control" placeholder="Silahkan masukkan nomor Customer">
+                            <input type="text" class="form-control" placeholder="Masukkan Nomor Customer">
                             <button type="submit" class="btn btn-primary">Cari</button>
                         </form>
                     </div>

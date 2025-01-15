@@ -5,7 +5,7 @@
 
         <!-- Page Title -->
         <div class="page-title dark-background" data-aos="fade"
-            style="background-image: url(assetsGuest/img/page-title-bg.jpg);">
+            style="background-image: url({{ asset('assetsGuest/img/page-title-bg.jpg') }});">
             <div class="container position-relative">
                 <h1>082245893329</h1>
                 <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam
@@ -29,7 +29,7 @@
                                         <p class="card-text">Driver 1</p>
                                         <p class="card-text">01 Januari 2025</p>
                                     </div>
-                                    <img src="assetsGuest/img/page-title-bg.jpg" alt="Light Blue Chair"
+                                    <img src="{{ asset('assetsGuest/img/page-title-bg.jpg') }}" alt="Light Blue Chair"
                                         class="status-image">
                                 </div>
                             </div>
@@ -44,7 +44,8 @@
                                     <p class="card-text">Driver 2</p>
                                     <p class="card-text">01 Januari 2025</p>
                                 </div>
-                                <img src="assetsGuest/img/page-title-bg.jpg" alt="Light Blue Chair" class="status-image">
+                                <img src="{{ asset('assetsGuest/img/page-title-bg.jpg') }}" alt="Light Blue Chair"
+                                    class="status-image">
                             </div>
                         </div>
                     </div>
@@ -57,7 +58,8 @@
                                     <p class="card-text">Driver 3</p>
                                     <p class="card-text">01 Januari 2025</p>
                                 </div>
-                                <img src="assetsGuest/img/page-title-bg.jpg" alt="Light Blue Chair" class="status-image">
+                                <img src="{{ asset('assetsGuest/img/page-title-bg.jpg') }}" alt="Light Blue Chair"
+                                    class="status-image">
                             </div>
                         </div>
                     </div>
@@ -70,7 +72,8 @@
                                     <p class="card-text">Driver 4</p>
                                     <p class="card-text">01 Januari 2025</p>
                                 </div>
-                                <img src="assetsGuest/img/page-title-bg.jpg" alt="Light Blue Chair" class="status-image">
+                                <img src="{{ asset('assetsGuest/img/page-title-bg.jpg') }}" alt="Light Blue Chair"
+                                    class="status-image">
                             </div>
                         </div>
                     </div>

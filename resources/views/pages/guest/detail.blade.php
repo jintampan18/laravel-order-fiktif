@@ -2,20 +2,19 @@
 
 @section('content')
     <main class="main">
-
-        <!-- Page Title -->
+        {{-- Header --}}
         <div class="page-title dark-background" data-aos="fade"
-            style="background-image: url(assetsGuest/img/page-title-bg.jpg);">
+            style="background-image: url({{ asset('assetsGuest/img/page-title-bg.jpg') }});">
             <div class="container position-relative">
                 <h1>082245893329</h1>
                 <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam
                     molestias.</p>
             </div>
-        </div><!-- End Page Title -->
+        </div>
 
-        <!-- Service Details Section -->
+        {{-- Body --}}
         <section id="service-details" class="service-details section">
-            <div class="container mt-5">
+            <div class="container">
                 <h1 class="text-center">Detail Pengaduan</h1>
 
                 <div class="card mt-4">
@@ -51,7 +50,7 @@
                         <div class="mb-3">
                             <strong>Bukti Screenshot:</strong>
                             <p>
-                                <img id="preview" class="img-fluid" src="assetsGuest/img/page-title-bg.jpg"
+                                <img id="preview" class="img-fluid" src="{{ asset('assetsGuest/img/page-title-bg.jpg') }}"
                                     alt="Preview">
                             </p>
                         </div>
@@ -63,7 +62,5 @@
                 </div>
             </div>
         </section><!-- /Service Details Section -->
-
-
     </main>
 @endsection
