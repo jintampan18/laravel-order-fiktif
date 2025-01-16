@@ -41,6 +41,8 @@ Route::middleware('auth')->group(function () {
         // Pengaduan
         Route::prefix('pengaduan')->name('pengaduan.')->group(function () {
             Route::get('/', [PengaduanController::class, 'index'])->name('index');
+            Route::get('{id}', [PengaduanController::class, 'show'])->name('detail');
+            Route::put('{id}', [PengaduanController::class, 'ubah_status'])->name('ubah_status');
         });
 
         // Manajemen Driver

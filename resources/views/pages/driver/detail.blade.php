@@ -5,20 +5,18 @@
 
         <!-- Page Title -->
         <div class="page-title dark-background" data-aos="fade"
-            style="background-image: url(assetsGuest/img/page-title-bg.jpg);">
+            style="background-image: url({{ asset('assetsGuest/img/page-title-bg.jpg') }});">
             <div class="container position-relative">
-                <h1>082245893329</h1>
-                <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam
-                    molestias.</p>
+                <h2>Detail Pengaduan</h2>
+                <p>Di halaman ini, Anda dapat melihat informasi lengkap mengenai pengaduan yang telah Anda ajukan, termasuk
+                    status dan langkah-langkah penyelesaiannya. Jika ada pertanyaan, silakan hubungi tim kami.</p>
             </div>
         </div><!-- End Page Title -->
 
         <!-- Service Details Section -->
         <section id="service-details" class="service-details section">
             <div class="container">
-                <h3 class="text-center">Detail Pengaduan</h3>
-
-                <div class="card mt-4">
+                <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Informasi Pengaduan</h5>
                         <hr>
@@ -36,6 +34,11 @@
                         <div class="mb-3">
                             <strong>Nomor Customer:</strong>
                             <p>{{ $complaint->number_phone_customer }}</p>
+                        </div>
+
+                        <div class="mb-3">
+                            <strong>Status Aduan:</strong>
+                            <p>{{ $complaint->status_aduan }}</p>
                         </div>
 
                         <div class="mb-3">

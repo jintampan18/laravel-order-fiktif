@@ -5,38 +5,37 @@
 
         <!-- Page Title -->
         <div class="page-title dark-background" data-aos="fade"
-            style="background-image: url(assetsGuest/img/page-title-bg.jpg);">
+            style="background-image: url({{ asset('assetsGuest/img/page-title-bg.jpg') }});">
             <div class="container position-relative">
-                <h1>082245893329</h1>
-                <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam
-                    molestias.</p>
+                <h2>Pengaduan</h2>
+                <p>Pastikan untuk menyertakan detail yang jelas mengenai masalah yang Anda hadapi, termasuk nomor order,
+                    deskripsi masalah, dan bukti pendukung jika ada. </p>
             </div>
         </div><!-- End Page Title -->
 
         <!-- Service Details Section -->
         <section id="service-details" class="service-details section">
-            <div class="container mt-5">
-                <h1 class="text-center">Form Pengaduan</h1>
+            <div class="container">
                 <form action="{{ route('pengaduan_driver.kirim_aduan') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
-                        <label for="driverName" class="form-label">Nama Driver</label>
+                        <strong for="driverName" class="form-label">Nama Driver</strong>
                         <input type="text" id="driverName" class="form-control" value="{{ Auth::user()->username }}"
                             readonly>
                     </div>
 
                     <div class="mb-3">
-                        <label for="customerName" class="form-label">Nama Customer</label>
+                        <strong for="customerName" class="form-label">Nama Customer</strong>
                         <input type="text" id="customerName" name="customerName" class="form-control" required>
                     </div>
 
                     <div class="mb-3">
-                        <label for="customerNumber" class="form-label">Nomor Customer</label>
+                        <strong for="customerNumber" class="form-label">Nomor Customer</strong>
                         <input type="text" id="customerNumber" name="customerNumber" class="form-control" required>
                     </div>
 
                     <div class="mb-3">
-                        <label for="complaintType" class="form-label">Jenis Aduan</label>
+                        <strong for="complaintType" class="form-label">Jenis Aduan</strong>
                         <select id="complaintType" name="complaintType" class="form-select" required>
                             <option value="" disabled selected>Pilih jenis aduan</option>
                             @foreach ($jenis_aduans as $aduan)
@@ -48,12 +47,12 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="notes" class="form-label">Catatan</label>
+                        <strong for="notes" class="form-label">Catatan</strong>
                         <textarea id="notes" name="notes" class="form-control" rows="4" required></textarea>
                     </div>
 
                     <div class="mb-3">
-                        <label for="screenshot" class="form-label">Upload Bukti SS</label>
+                        <strong for="screenshot" class="form-label">Upload Bukti SS</strong>
                         <input type="file" id="screenshot" name="screenshot" class="form-control" accept="image/*"
                             required onchange="previewImage(event)">
                         <img id="preview" class="img-fluid mt-2" src="#" alt="Preview" style="display: none;">

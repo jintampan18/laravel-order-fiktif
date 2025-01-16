@@ -31,6 +31,23 @@
     <link href="{{ asset('assetsGuest/css/main.css') }}" rel="stylesheet">
 
     <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            /* Hapus margin default */
+        }
+
+        .wrapper {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            flex: 1;
+        }
+
         /* Card item */
         .card {
             border: 1px solid #e0e0e0;
@@ -98,11 +115,21 @@
 </head>
 
 <body class="index-page">
-    @include('pages.guest.layouts.header')
+    {{-- @include('pages.guest.layouts.header')
 
     @yield('content')
 
-    @include('pages.guest.layouts.footer')
+    @include('pages.guest.layouts.footer') --}}
+
+    <div class="wrapper">
+        @include('pages.guest.layouts.header')
+
+        <div class="content">
+            @yield('content')
+        </div>
+
+        @include('pages.guest.layouts.footer')
+    </div>
 
     <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
