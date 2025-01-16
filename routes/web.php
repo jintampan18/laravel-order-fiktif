@@ -21,7 +21,7 @@ Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 // Rute untuk Tamu (Guest)
 Route::prefix('guest')->name('guest.')->group(function () {
     Route::get('list_aduan', [GuestController::class, 'list_aduan'])->name('list_aduan');
-    Route::get('detail', [GuestController::class, 'detail'])->name('detail');
+    Route::get('detail/{id}', [GuestController::class, 'detail'])->name('detail');
 });
 
 Route::middleware('auth')->group(function () {

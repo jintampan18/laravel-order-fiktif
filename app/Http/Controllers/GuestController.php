@@ -14,15 +14,12 @@ class GuestController extends Controller
 
     public function list_aduan(Request $request)
     {
-        // Validasi input
         $request->validate([
-            'customer_number' => 'required|string|max:15', // Validasi nomor customer
+            'customer_number' => 'required|string|max:15',
         ]);
 
-        // Ambil nomor customer dari input
         $customerNumber = $request->input('customer_number');
 
-        // Cari pengaduan berdasarkan nomor customer
         $complaints = Complaint::where('number_phone_customer', $customerNumber)->get();
 
         // // Cari pengaduan berdasarkan nomor customer menggunakan LIKE
@@ -32,8 +29,10 @@ class GuestController extends Controller
         return view('pages.guest.list-aduan', compact('customerNumber', 'complaints'));
     }
 
-    public function detail()
+    public function detail($id)
     {
-        return view('pages.guest.detail');
+        $complaint = Complaint::with('user', 'jenisAduan')->findOrFail($id);
+
+        return view('pages.guest.detail', compact('complaint'));
     }
 }

@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link href="assets/css/app.css" rel="stylesheet">
     <link href="assets/css/icons.css" rel="stylesheet">
-    <title>Dashtreme - Multipurpose Bootstrap5 Admin Template</title>
+    <title>Silapor - Login</title>
 </head>
 
 <body class="bg-login">
@@ -32,7 +32,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="border p-4 rounded">
-                                    <h1 class="text-center">Sign In</h1>
+                                    <h1 class="text-center">Login</h1>
                                     <div class="form-body">
                                         <form class="row g-3" action="{{ route('post_login') }}" method="POST">
                                             @csrf

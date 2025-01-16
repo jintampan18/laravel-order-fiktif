@@ -17,7 +17,7 @@
         <section id="service-details" class="service-details section">
             <div class="container">
                 @if ($complaints->isEmpty())
-                    <p>Tidak ada pengaduan yang ditemukan untuk nomor customer tersebut.</p>
+                    <p class="text-center">Tidak ada pengaduan yang ditemukan untuk nomor customer tersebut.</p>
                 @else
                     <div class="row">
                         @foreach ($complaints as $complaint)

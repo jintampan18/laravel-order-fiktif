@@ -8,8 +8,8 @@
             style="background-image: url({{ asset('assetsGuest/img/page-title-bg.jpg') }});">
             <div class="container position-relative">
                 <h1>{{ $customerNumber }}</h1>
-                <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam
-                    molestias.</p>
+                <p>Anda dapat menemukan nomor telepon terkait orderan fiktif yang Anda cari. Jika Anda
+                    memiliki pertanyaan lebih lanjut atau membutuhkan bantuan, jangan ragu untuk menghubungi tim kami.</p>
             </div>
         </div><!-- End Page Title -->
 
@@ -18,12 +18,12 @@
             <div class="container">
                 <h3 class="text-center">Hasil Pencarian</h3>
                 @if ($complaints->isEmpty())
-                    <p>Tidak ada pengaduan yang ditemukan untuk nomor customer tersebut.</p>
+                    <p class="text-center">Tidak ada pengaduan yang ditemukan untuk nomor customer tersebut.</p>
                 @else
                     <div class="row">
                         @foreach ($complaints as $complaint)
                             <div class="col-md-4">
-                                <a href="{{ route('pengaduan_driver.detail', $complaint->id) }}">
+                                <a href="{{ route('guest.detail', $complaint->id) }}">
                                     <div class="card border-gray bg-light">
                                         <div class="card-body d-flex justify-content-between">
                                             <div>
@@ -31,7 +31,9 @@
                                                 <p class="card-text">
                                                     {{ $complaint->user->username }}
                                                 </p>
-                                                <p class="card-text">{{ $complaint->created_at }}</p>
+                                                <p class="card-text">
+                                                    {{ \Carbon\Carbon::parse($complaint->created_at)->translatedFormat('d F Y') }}
+                                                </p>
                                             </div>
                                             <img src="{{ $complaint->bukti_ss === 'no-image' ? asset('assetsGuest/img/no-image.png') : asset('storage/' . $complaint->bukti_ss) }}"
                                                 alt="Bukti Screenshot" class="status-image">

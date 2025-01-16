@@ -28,6 +28,10 @@ class AuthController extends Controller
             return redirect()->back()->withErrors(['email' => 'Akun belum terdaftar'])->withInput();
         }
 
+        if ($user->status !== 'active') {
+            return redirect()->back()->withErrors(['email' => 'Akun tidak aktif'])->withInput();
+        }
+
         if (!Auth::attempt($request->only('email', 'password'))) {
             return redirect()->back()->withErrors(['password' => 'Password salah'])->withInput();
         }

@@ -16,7 +16,7 @@
                 @endif
                 @if (Auth::check() && Auth::user()->role === 'admin')
                     <li>
-                        <button id="logoutButton" class="login-button bg-primary">Dashboard</button>
+                        <button id="dashboardButton" class="login-button bg-primary">Dashboard</button>
                     </li>
                 @endif
 

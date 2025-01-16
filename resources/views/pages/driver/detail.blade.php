@@ -68,6 +68,5 @@
             </div>
         </section><!-- /Service Details Section -->
 
-
     </main>
 @endsection
