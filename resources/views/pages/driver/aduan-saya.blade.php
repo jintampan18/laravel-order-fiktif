@@ -16,68 +16,39 @@
         <!-- Service Details Section -->
         <section id="service-details" class="service-details section">
             <div class="container">
-                <h3 class="text-center">Data Pengaduan</h3>
-
-                <div class="row">
-                    <!-- Card Item 1 - Proses -->
-                    <div class="col-md-4">
-                        <a href="{{ route('pengaduan_driver.detail') }}">
-                            <div class="card border-gray bg-light">
-                                <div class="card-body d-flex justify-content-between">
-                                    <div>
-                                        <h5 class="card-title">Jack Ma</h5>
-                                        <p class="card-text">Driver 1</p>
-                                        <p class="card-text">01 Januari 2025</p>
+                <h3 class="text-center">Data Aduan Saya</h3>
+                @if ($complaints->isEmpty())
+                    <p>Tidak ada pengaduan yang ditemukan untuk nomor customer tersebut.</p>
+                @else
+                    <div class="row">
+                        @foreach ($complaints as $complaint)
+                            <div class="col-md-4">
+                                <a href="{{ route('pengaduan_driver.detail', $complaint->id) }}">
+                                    <div class="card border-gray bg-light">
+                                        <div class="card-body d-flex justify-content-between">
+                                            <div>
+                                                <h5 class="card-title">{{ $complaint->name_customer }}</h5>
+                                                <p class="card-text">
+                                                    <span
+                                                        class="custom-badge
+                                                @if ($complaint->status_aduan == 'proses') badge-pending
+                                                @elseif($complaint->status_aduan == 'verifikasi') badge-accepted
+                                                @elseif($complaint->status_aduan == 'tolak') badge-rejected
+                                                @else badge-default @endif">
+                                                        {{ $complaint->status_aduan }}
+                                                    </span>
+                                                </p>
+                                                <p class="card-text">{{ $complaint->created_at }}</p>
+                                            </div>
+                                            <img src="{{ asset('storage/' . $complaint->bukti_ss) }}" alt="Bukti Screenshot"
+                                                class="status-image">
+                                        </div>
                                     </div>
-                                    <img src="{{ asset('assetsGuest/img/page-title-bg.jpg') }}" alt="Light Blue Chair"
-                                        class="status-image">
-                                </div>
+                                </a>
                             </div>
-                        </a>
+                        @endforeach
                     </div>
-
-                    <div class="col-md-4">
-                        <div class="card border-gray bg-light">
-                            <div class="card-body d-flex justify-content-between">
-                                <div>
-                                    <h5 class="card-title">Jack Ma</h5>
-                                    <p class="card-text">Driver 2</p>
-                                    <p class="card-text">01 Januari 2025</p>
-                                </div>
-                                <img src="{{ asset('assetsGuest/img/page-title-bg.jpg') }}" alt="Light Blue Chair"
-                                    class="status-image">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="card border-gray bg-light">
-                            <div class="card-body d-flex justify-content-between">
-                                <div>
-                                    <h5 class="card-title">Jack Ma</h5>
-                                    <p class="card-text">Driver 3</p>
-                                    <p class="card-text">01 Januari 2025</p>
-                                </div>
-                                <img src="{{ asset('assetsGuest/img/page-title-bg.jpg') }}" alt="Light Blue Chair"
-                                    class="status-image">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="card border-gray bg-light">
-                            <div class="card-body d-flex justify-content-between">
-                                <div>
-                                    <h5 class="card-title">Jack Ma</h5>
-                                    <p class="card-text">Driver 4</p>
-                                    <p class="card-text">01 Januari 2025</p>
-                                </div>
-                                <img src="{{ asset('assetsGuest/img/page-title-bg.jpg') }}" alt="Light Blue Chair"
-                                    class="status-image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endif
             </div>
         </section><!-- /Service Details Section -->
     </main>

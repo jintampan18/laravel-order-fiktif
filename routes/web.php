@@ -29,7 +29,8 @@ Route::middleware('auth')->group(function () {
     Route::middleware('role:driver')->prefix('driver')->name('pengaduan_driver.')->group(function () {
         Route::get('pengaduan', [PengaduanDriverController::class, 'index'])->name('index');
         Route::get('form_aduan', [PengaduanDriverController::class, 'form_aduan'])->name('form_aduan');
-        Route::get('detail_pengaduan', [PengaduanDriverController::class, 'detail'])->name('detail');
+        Route::post('kirim_aduan', [PengaduanDriverController::class, 'kirim_aduan'])->name('kirim_aduan');
+        Route::get('detail_pengaduan/{id}', [PengaduanDriverController::class, 'detail'])->name('detail');
     });
 
     // Rute untuk Admin

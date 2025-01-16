@@ -15,8 +15,8 @@
 
         <!-- Service Details Section -->
         <section id="service-details" class="service-details section">
-            <div class="container mt-5">
-                <h1 class="text-center">Detail Pengaduan</h1>
+            <div class="container">
+                <h3 class="text-center">Detail Pengaduan</h3>
 
                 <div class="card mt-4">
                     <div class="card-body">
@@ -25,33 +25,33 @@
 
                         <div class="mb-3">
                             <strong>Nama Driver:</strong>
-                            <p>Nama Driver</p>
+                            <p>{{ $complaint->user->username }}</p>
                         </div>
 
                         <div class="mb-3">
                             <strong>Nama Customer:</strong>
-                            <p>Nama Customer</p>
+                            <p>{{ $complaint->name_customer }}</p>
                         </div>
 
                         <div class="mb-3">
                             <strong>Nomor Customer:</strong>
-                            <p>0823xxxxxxxxxxxx</p>
+                            <p>{{ $complaint->number_phone_customer }}</p>
                         </div>
 
                         <div class="mb-3">
                             <strong>Jenis Aduan:</strong>
-                            <p>Layanan</p>
+                            <p>{{ $complaint->jenisAduan->title }}</p>
                         </div>
 
                         <div class="mb-3">
                             <strong>Catatan:</strong>
-                            <p>Ini adalah catatan pengaduan yang diberikan oleh customer.</p>
+                            <p>{{ $complaint->catatan }}</p>
                         </div>
 
                         <div class="mb-3">
                             <strong>Bukti Screenshot:</strong>
                             <p>
-                                <img id="preview" class="img-fluid" src="assetsGuest/img/page-title-bg.jpg"
+                                <img id="preview" class="img-fluid" src="{{ asset('storage/' . $complaint->bukti_ss) }}"
                                     alt="Preview">
                             </p>
                         </div>

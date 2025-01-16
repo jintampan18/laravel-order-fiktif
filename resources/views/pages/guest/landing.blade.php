@@ -15,9 +15,10 @@
                             non praesentium nesciunt optio quis sit odio nemo quisquam. eius quos reiciendis eum vel eum
                             voluptatem eum maiores eaque id optio ullam occaecati odio est possimus vel reprehenderit</p>
 
-                        <form action="{{ route('guest.list_aduan') }}" class="form-search d-flex align-items-stretch mb-3"
-                            data-aos="fade-up" data-aos-delay="200">
-                            <input type="text" class="form-control" placeholder="Masukkan Nomor Customer">
+                        <form action="{{ route('guest.list_aduan') }}" method="GET"
+                            class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
+                            <input type="text" name="customer_number" class="form-control"
+                                placeholder="Masukkan Nomor Customer" required>
                             <button type="submit" class="btn btn-primary">Cari</button>
                         </form>
                     </div>

@@ -17,11 +17,12 @@
         <section id="service-details" class="service-details section">
             <div class="container mt-5">
                 <h1 class="text-center">Form Pengaduan</h1>
-                <form action="{{ route('pengaduan_driver.index') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('pengaduan_driver.kirim_aduan') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
                         <label for="driverName" class="form-label">Nama Driver</label>
-                        <input type="text" id="driverName" class="form-control" value="Nama Driver" readonly>
+                        <input type="text" id="driverName" class="form-control" value="{{ Auth::user()->username }}"
+                            readonly>
                     </div>
 
                     <div class="mb-3">
@@ -38,9 +39,11 @@
                         <label for="complaintType" class="form-label">Jenis Aduan</label>
                         <select id="complaintType" name="complaintType" class="form-select" required>
                             <option value="" disabled selected>Pilih jenis aduan</option>
-                            <option value="service">Layanan</option>
-                            <option value="delivery">Pengiriman</option>
-                            <option value="other">Lainnya</option>
+                            @foreach ($jenis_aduans as $aduan)
+                                <option value="{{ $aduan->id }}">
+                                    {{ $aduan->title }}
+                                </option>
+                            @endforeach
                         </select>
                     </div>
 

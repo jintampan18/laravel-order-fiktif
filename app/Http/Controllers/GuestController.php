@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Complaint;
 use Illuminate\Http\Request;
 
 class GuestController extends Controller
@@ -11,9 +12,24 @@ class GuestController extends Controller
         return view('pages.guest.landing');
     }
 
-    public function list_aduan()
+    public function list_aduan(Request $request)
     {
-        return view('pages.guest.list-aduan');
+        // Validasi input
+        $request->validate([
+            'customer_number' => 'required|string|max:15', // Validasi nomor customer
+        ]);
+
+        // Ambil nomor customer dari input
+        $customerNumber = $request->input('customer_number');
+
+        // Cari pengaduan berdasarkan nomor customer
+        $complaints = Complaint::where('number_phone_customer', $customerNumber)->get();
+
+        // // Cari pengaduan berdasarkan nomor customer menggunakan LIKE
+        // $complaints = Complaint::where('number_phone_customer', 'LIKE', '%' . $customerNumber . '%')->get();
+
+        // Kembalikan view dengan data pengaduan
+        return view('pages.guest.list-aduan', compact('customerNumber', 'complaints'));
     }
 
     public function detail()

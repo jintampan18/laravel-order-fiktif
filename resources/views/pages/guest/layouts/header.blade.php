@@ -14,6 +14,12 @@
                     <li><a href="{{ route('pengaduan_driver.index') }}">Aduan Saya</a></li>
                     <li><a href="{{ route('pengaduan_driver.form_aduan') }}">Form Pengaduan</a></li>
                 @endif
+                @if (Auth::check() && Auth::user()->role === 'admin')
+                    <li>
+                        <button id="logoutButton" class="login-button bg-primary">Dashboard</button>
+                    </li>
+                @endif
+
                 @if (Auth::check())
                     <li>
                         <button id="logoutButton" class="login-button bg-danger">Logout</button>
@@ -33,6 +39,13 @@
     document.addEventListener('DOMContentLoaded', function() {
         const loginButton = document.getElementById('loginButton');
         const logoutButton = document.getElementById('logoutButton');
+        const dashboardButton = document.getElementById('dashboardButton');
+
+        if (dashboardButton) {
+            dashboardButton.addEventListener('click', function() {
+                window.location.href = "{{ route('dashboard') }}"; // Arahkan ke halaman dashboard
+            });
+        }
 
         if (loginButton) {
             loginButton.addEventListener('click', function() {

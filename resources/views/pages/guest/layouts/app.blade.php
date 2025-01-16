@@ -31,6 +31,7 @@
     <link href="{{ asset('assetsGuest/css/main.css') }}" rel="stylesheet">
 
     <style>
+        /* Card item */
         .card {
             border: 1px solid #e0e0e0;
             border-radius: 10px;
@@ -48,6 +49,7 @@
             object-fit: cover;
         }
 
+        /* Button Login */
         .login-button {
             padding: 8px 20px;
             /* background-color: #007bff; */
@@ -59,10 +61,31 @@
             margin: 10px 20px;
         }
 
-        /*
-        .login-button:hover {
-            background-color: #0056b3;
-        } */
+        /* Badge */
+        .custom-badge {
+            display: inline-block;
+            padding: 0.5em 0.75em;
+            font-size: 0.9em;
+            border-radius: 0.5em;
+            color: white;
+            /* Warna teks */
+        }
+
+        .badge-pending {
+            background-color: #ffc107;
+        }
+
+        .badge-accepted {
+            background-color: #28a745;
+        }
+
+        .badge-rejected {
+            background-color: #b81745;
+        }
+
+        .badge-default {
+            background-color: #6c757d;
+        }
     </style>
 
     <!-- =======================================================
