@@ -20,7 +20,9 @@ class GuestController extends Controller
 
         $customerNumber = $request->input('customer_number');
 
-        $complaints = Complaint::where('number_phone_customer', $customerNumber)->get();
+        $complaints = Complaint::where('number_phone_customer', $customerNumber)
+            ->where('status_aduan', 'verifikasi')
+            ->get();
 
         // // Cari pengaduan berdasarkan nomor customer menggunakan LIKE
         // $complaints = Complaint::where('number_phone_customer', 'LIKE', '%' . $customerNumber . '%')->get();
