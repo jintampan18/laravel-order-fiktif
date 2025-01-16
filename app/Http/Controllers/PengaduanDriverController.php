@@ -35,11 +35,8 @@ class PengaduanDriverController extends Controller
             'customerNumber' => 'required|string|max:15',
             'complaintType' => 'required|exists:jenis_aduan,id',
             'notes' => 'required|string',
-            'screenshot' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'screenshot' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-
-        // Menyimpan file screenshot
-        $screenshotPath = $request->file('screenshot')->store('screenshots', 'public');
 
         // Membuat entri baru di tabel aduan
         $aduan = new Complaint();
@@ -48,7 +45,15 @@ class PengaduanDriverController extends Controller
         $aduan->number_phone_customer = $request->customerNumber;
         $aduan->jenis_aduan_id = $request->complaintType;
         $aduan->catatan = $request->notes;
-        $aduan->bukti_ss = $screenshotPath;
+
+        // Menyimpan file screenshot jika ada
+        if ($request->hasFile('screenshot')) {
+            $screenshotPath = $request->file('screenshot')->store('screenshots', 'public');
+            $aduan->bukti_ss = $screenshotPath;
+        } else {
+            $aduan->bukti_ss = "no-image";
+        }
+
         $aduan->status_aduan = "proses";
         $aduan->save();
 

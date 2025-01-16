@@ -30,19 +30,11 @@
                                                 <h5 class="card-title">{{ $complaint->name_customer }}</h5>
                                                 <p class="card-text">
                                                     {{ $complaint->user->username }}
-                                                    {{-- <span
-                                                        class="custom-badge
-                                                @if ($complaint->status_aduan == 'proses') badge-pending
-                                                @elseif($complaint->status_aduan == 'verifikasi') badge-accepted
-                                                @elseif($complaint->status_aduan == 'tolak') badge-rejected
-                                                @else badge-default @endif">
-                                                        {{ $complaint->status_aduan }}
-                                                    </span> --}}
                                                 </p>
                                                 <p class="card-text">{{ $complaint->created_at }}</p>
                                             </div>
-                                            <img src="{{ asset('storage/' . $complaint->bukti_ss) }}" alt="Bukti Screenshot"
-                                                class="status-image">
+                                            <img src="{{ $complaint->bukti_ss === 'no-image' ? asset('assetsGuest/img/no-image.png') : asset('storage/' . $complaint->bukti_ss) }}"
+                                                alt="Bukti Screenshot" class="status-image">
                                         </div>
                                     </div>
                                 </a>

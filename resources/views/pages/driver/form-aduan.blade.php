@@ -54,7 +54,7 @@
                     <div class="mb-3">
                         <strong for="screenshot" class="form-label">Upload Bukti SS</strong>
                         <input type="file" id="screenshot" name="screenshot" class="form-control" accept="image/*"
-                            required onchange="previewImage(event)">
+                            onchange="previewImage(event)">
                         <img id="preview" class="img-fluid mt-2" src="#" alt="Preview" style="display: none;">
                     </div>
 

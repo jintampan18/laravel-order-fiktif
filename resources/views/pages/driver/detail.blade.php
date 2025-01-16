@@ -54,7 +54,8 @@
                         <div class="mb-3">
                             <strong>Bukti Screenshot:</strong>
                             <p>
-                                <img id="preview" class="img-fluid" src="{{ asset('storage/' . $complaint->bukti_ss) }}"
+                                <img id="preview" class="img-fluid"
+                                    src="{{ $complaint->bukti_ss === 'no-image' ? asset('assetsGuest/img/no-image.png') : asset('storage/' . $complaint->bukti_ss) }}"
                                     alt="Preview">
                             </p>
                         </div>

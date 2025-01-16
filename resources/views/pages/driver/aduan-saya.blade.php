@@ -41,8 +41,11 @@
                                                     {{ \Carbon\Carbon::parse($complaint->created_at)->translatedFormat('d F Y') }}
                                                 </p>
                                             </div>
-                                            <img src="{{ asset('storage/' . $complaint->bukti_ss) }}" alt="Bukti Screenshot"
-                                                class="status-image">
+                                            {{-- <img src="{{ asset('storage/' . $complaint->bukti_ss) }}" alt="Bukti Screenshot"
+                                                class="status-image"> --}}
+                                            <img src="{{ $complaint->bukti_ss === 'no-image' ? asset('assetsGuest/img/no-image.png') : asset('storage/' . $complaint->bukti_ss) }}"
+                                                alt="Bukti Screenshot" class="status-image">
+
                                         </div>
                                     </div>
                                 </a>
