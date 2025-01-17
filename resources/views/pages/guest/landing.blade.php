@@ -10,7 +10,7 @@
             <div class="container">
                 <div class="row gy-4 d-flex justify-content-between">
                     <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-                        <h2 data-aos="fade-up">Lindungi Diri Anda dari Orderan Fiktif</h2>
+                        <h2 data-aos="fade-up">Aplikasi Informasi Orderan Fiktif</h2>
                         <p data-aos="fade-up" data-aos-delay="100">Di Silapor, kami menyediakan platform yang
                             aman dan mudah untuk melaporkan orderan fiktif.
                             Dapatkan keadilan dan dukungan yang Anda butuhkan sebagai driver. Bergabunglah dengan kami dan
